@@ -1,0 +1,32 @@
+# Build directories
+build/
+bin/
+out/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*~
+*.suo
+*.user
+
+# Compiled object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+
+# CMake temporary files (if in-source build is accidentally run)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
