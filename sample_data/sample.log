@@ -1,0 +1,14 @@
+2026-09-12 10:15:21 INFO Application started successfully on port 8080
+2026-09-12 10:15:24 INFO User 'alice' logged in from 192.168.1.50
+2026-09-12 10:15:30 DEBUG Memory pool allocated with 256MB capacity
+2026-09-12 10:16:03 WARNING Database response slow (took 452ms)
+2026-09-12 10:16:45 INFO Processing order batch #4102
+this is a malformed line that should be skipped by the parser
+2026-09-12 10:17:11 ERROR Database connection failed after 3 attempts
+2026-09-12 10:17:12 WARNING Retrying database connection using backup replica
+2026-09-12 10:17:15 ERROR Database connection failed on backup replica
+2026-09-12 10:17:30 INFO Fallback cache enabled for read operations
+2026-09-12 10:18:04 INFO User 'alice' logged out
+2026-09-12 10:18:15 DEBUG Garbage collector freed 42MB
+2026-09-12 10:19:00 INVALID_LEVEL_LINE Something is definitely broken here
+2026-09-12 10:20:00 INFO Health check passed for 4 services
