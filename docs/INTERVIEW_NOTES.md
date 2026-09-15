@@ -140,3 +140,10 @@ This document provides structured explanations, architectural diagrams, and prec
 > **Answer:** "Concurrency introduces synchronization complexity, race conditions, and non-deterministic bugs. Version 1 was intentionally designed single-threaded to establish correctness, clear architecture, comprehensive error handling, and solid unit testing first. 
 > 
 > If profiling showed parsing was I/O or CPU bound on large files, we could partition the file into chunk byte offsets and process chunks across worker threads using a producer-consumer pattern."
+
+### Q9: How did you structure the build and IDE development environment?
+> **Answer:** "I used a modern target-centric CMake setup:
+> 1. **Target Encapsulation**: A core static library `log_analyzer_lib` packages the domain model, parser, and analyzer, exposing `include/` with `PUBLIC` visibility. Both the CLI binary and CTest unit test executables link against this library.
+> 2. **Automated Tooling Integration**: `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` generates `compile_commands.json` automatically, establishing a single source of truth for build flags and include paths.
+> 3. **LSP / Clangd Support**: Configured `.clangd` to target `x86_64-w64-windows-gnu` and index MSYS2 UCRT64 system headers, ensuring zero false-positive diagnostics in the editor."
+

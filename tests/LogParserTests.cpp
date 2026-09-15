@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <filesystem>
+#include <cstdio>
 
 namespace {
 
@@ -94,7 +94,7 @@ bool testFileParsingWithMalformedLines() {
     std::ostringstream warnStream;
     auto entries = parser.parseFile(tempFile, &malformedCount, &warnStream);
 
-    std::filesystem::remove(tempFile);
+    std::remove(tempFile.c_str());
 
     return entries.size() == 3 &&
            malformedCount == 2 &&

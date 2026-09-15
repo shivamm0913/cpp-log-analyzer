@@ -54,12 +54,16 @@ project(LogAnalyzer
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Enable strict compiler warnings to ensure high code quality and prevent bugs
 if(MSVC)
     add_compile_options(/W4 /permissive-)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
+    if(MINGW)
+        add_link_options(-static -static-libgcc -static-libstdc++)
+    endif()
 endif()
 
 # ------------------------------------------------------------------------------
